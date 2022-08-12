@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "861667636025",
+    "firebase_url": "https://ict-notes-and-pastpapers-default-rtdb.firebaseio.com",
+    "project_id": "ict-notes-and-pastpapers",
+    "storage_bucket": "ict-notes-and-pastpapers.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:861667636025:android:905914f35233af7aa86ee8",
+        "android_client_info": {
+          "package_name": "com.dict.n"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "861667636025-q7ojspn2g7230k4hhbsnj79h2khbcj3p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcHA7k48cbkMfIZJh4KjS4WHvycZg0bHU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "861667636025-q7ojspn2g7230k4hhbsnj79h2khbcj3p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
