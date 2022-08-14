@@ -6,6 +6,8 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:ictnotes/module_one_items/module_one.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'package:no_internet_check/internet_connectivity/initialize_internet_checker.dart';
+import 'package:no_internet_check/internet_connectivity/navigation_Service.dart';
 
 import '../module_three_items/module_three.dart';
 import '../module_two_items/module_two.dart';
@@ -161,9 +163,14 @@ class _HomeIctState extends State<HomeIct> {
     loadinlineBannerAd();
     createInterstitialAd();
     createRewardedAd();
+    InternetChecker();
 
     super.initState();
-    InternetPopup().initialize(context: context);
+    InternetPopup().initializeCustomWidget(
+        context: context,
+        widget: Card(
+          elevation: 500,
+        ));
   }
 
   @override
@@ -397,7 +404,83 @@ class _HomeIctState extends State<HomeIct> {
           ),
         ],
       ),
-      drawer: const Drawer(),
+      drawer: Drawer(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+              topRight: Radius.circular(20), bottomRight: Radius.circular(20)),
+        ),
+        child: ListView(
+          padding: EdgeInsets.all(0),
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.indigo[800],
+              ), //BoxDecoration
+              child: UserAccountsDrawerHeader(
+                decoration: BoxDecoration(color: Colors.indigo[800]),
+                accountName: const Text(
+                  "NEVI STUDIOS",
+                  style: TextStyle(fontSize: 18),
+                ),
+                accountEmail: Text("nevilpurpp12@gmail.com"),
+                currentAccountPictureSize: Size.square(50),
+                currentAccountPicture: CircleAvatar(
+                  backgroundColor: Color.fromARGB(255, 165, 255, 137),
+                  child: Text(
+                    "N",
+                    style: TextStyle(fontSize: 30.0, color: Colors.blue),
+                  ), //Text
+                ), //circleAvatar
+              ), //UserAccountDrawerHeader
+            ), //DrawerHeader
+
+            AboutListTile(
+              icon: Icon(Icons.info),
+              applicationIcon: Icon(
+                Icons.info_outline,
+                color: Colors.indigo[800],
+              ),
+              applicationName: 'ICT NOTES AND PAST-PAPERS',
+              applicationVersion: '2.6.1',
+              applicationLegalese: '2022 Company',
+              child: const Text(
+                'About App',
+                style: TextStyle(
+                    color: Colors.indigo, fontWeight: FontWeight.bold),
+              ),
+            ),
+
+            ListTile(
+              leading: Icon(
+                Icons.more_outlined,
+                color: Colors.indigo[800],
+              ),
+              title: const Text(
+                'more apps',
+                style: TextStyle(
+                    color: Colors.indigo, fontWeight: FontWeight.bold),
+              ),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.close_outlined,
+                color: Colors.indigo[800],
+              ),
+              title: const Text(
+                'exit',
+                style: TextStyle(
+                    color: Colors.indigo, fontWeight: FontWeight.bold),
+              ),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
+      ),
     );
   }
 

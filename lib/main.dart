@@ -6,6 +6,7 @@ import 'dart:ui';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import 'package:ictnotes/screens/Home_ict.dart';
+import 'package:no_internet_check/internet_connectivity/navigation_Service.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      navigatorKey: NavigationService.navigationKey,
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: HomeIct(),

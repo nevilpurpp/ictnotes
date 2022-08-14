@@ -1,4 +1,4 @@
-class A{
- //auto gen ,do net edit !!! 
-  static String test="test";
+class A {
+  //auto gen ,do not edit !!!
+  static String test = "test";
 }
