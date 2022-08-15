@@ -435,7 +435,10 @@ class _HomeIctState extends State<HomeIct> {
             ), //DrawerHeader
 
             AboutListTile(
-              icon: Icon(Icons.info),
+              icon: const Icon(
+                Icons.info,
+                color: Colors.indigo,
+              ),
               applicationIcon: Icon(
                 Icons.info_outline,
                 color: Colors.indigo[800],

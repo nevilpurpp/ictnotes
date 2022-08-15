@@ -2,20 +2,25 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_pdfview/flutter_pdfview.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:ictnotes/screens/Home_ict.dart';
 import 'package:path/path.dart';
+
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 }
+
 class PDFViewerPage extends StatefulWidget {
   final File file;
 
-  const PDFViewerPage( {Key? key,
-  required this.file,}) : super(key: key);
+  const PDFViewerPage({
+    Key? key,
+    required this.file,
+  }) : super(key: key);
 
   @override
   _PDFViewerPageState createState() => _PDFViewerPageState();
@@ -23,7 +28,7 @@ class PDFViewerPage extends StatefulWidget {
 
 class _PDFViewerPageState extends State<PDFViewerPage> {
   final Completer<PDFViewController> _controller =
-  Completer<PDFViewController>();
+      Completer<PDFViewController>();
   int? pages = 0;
   int? currentPage = 0;
   bool isReady = false;
@@ -55,7 +60,9 @@ class _PDFViewerPageState extends State<PDFViewerPage> {
         },
         onAdFailedToLoad: (ad, error) {
           ad.dispose();
-          print('ad failed to load ${error.message}');
+          if (kDebugMode) {
+            print('ad failed to load ${error.message}');
+          }
         },
       ),
       request: request,
@@ -75,7 +82,9 @@ class _PDFViewerPageState extends State<PDFViewerPage> {
         },
         onAdFailedToLoad: (ad, error) {
           ad.dispose();
-          print('ad failed to load ${error.message}');
+          if (kDebugMode) {
+            print('ad failed to load ${error.message}');
+          }
         },
       ),
       request: request,
@@ -93,7 +102,9 @@ class _PDFViewerPageState extends State<PDFViewerPage> {
         }), onAdFailedToLoad: (error) {
           interstitialAttempt++;
           interstitialAd = null;
-          print('ad failed to load ${error.message}');
+          if (kDebugMode) {
+            print('ad failed to load ${error.message}');
+          }
           if (interstitialAttempt <= maxAttemps) {
             createInterstitialAd();
           }
@@ -110,7 +121,9 @@ class _PDFViewerPageState extends State<PDFViewerPage> {
         }), onAdFailedToLoad: (error) {
           rewardedAdAttempt++;
           rewardedAd = null;
-          print('ad failed to load ${error.message}');
+          if (kDebugMode) {
+            print('ad failed to load ${error.message}');
+          }
           if (rewardedAdAttempt <= maxAttemps) {
             createRewardedAd();
           }
@@ -119,7 +132,9 @@ class _PDFViewerPageState extends State<PDFViewerPage> {
 
   void showRewardedAd() {
     if (rewardedAd == null) {
-      print('');
+      if (kDebugMode) {
+        print('');
+      }
       return;
     }
     rewardedAd!.fullScreenContentCallback = FullScreenContentCallback(
@@ -130,12 +145,16 @@ class _PDFViewerPageState extends State<PDFViewerPage> {
         },
         onAdFailedToShowFullScreenContent: (ad, error) {
           ad.dispose();
-          print('failed to show ad $ad');
+          if (kDebugMode) {
+            print('failed to show ad $ad');
+          }
           createRewardedAd();
         });
     rewardedAd!.show(
       onUserEarnedReward: (ad, reward) {
-        print('reward video ${reward.amount}${reward.type}');
+        if (kDebugMode) {
+          print('reward video ${reward.amount}${reward.type}');
+        }
       },
     );
     rewardedAd = null;
@@ -143,7 +162,9 @@ class _PDFViewerPageState extends State<PDFViewerPage> {
 
   void showInterstistialAd() {
     if (interstitialAd == null) {
-      print('');
+      if (kDebugMode) {
+        print('');
+      }
       return;
     }
     interstitialAd!.fullScreenContentCallback = FullScreenContentCallback(
@@ -154,7 +175,9 @@ class _PDFViewerPageState extends State<PDFViewerPage> {
         },
         onAdFailedToShowFullScreenContent: (ad, error) {
           ad.dispose();
-          print('failed to show ad $ad');
+          if (kDebugMode) {
+            print('failed to show ad $ad');
+          }
           createInterstitialAd();
         });
     interstitialAd!.show();
@@ -177,32 +200,33 @@ class _PDFViewerPageState extends State<PDFViewerPage> {
 
   @override
   Widget build(BuildContext context) {
-    final name= basename(widget.file.path);
+    final name = basename(widget.file.path);
 
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.deepPurple[800],
-        title:Text(name),
-        leading:
-        IconButton(onPressed: (){showRewardedAd();
-          Navigator.pop(context);
-        },
-        icon: const Icon(Icons.arrow_back_ios_outlined),),
+        title: Text(name),
+        leading: IconButton(
+          onPressed: () {
+            showRewardedAd();
+            Navigator.pop(context);
+          },
+          icon: const Icon(Icons.arrow_back_ios_outlined),
+        ),
       ),
-      body: Stack(
-        children: <Widget>[PDFView(
+      body: Stack(children: <Widget>[
+        PDFView(
           fitPolicy: FitPolicy.BOTH,
           filePath: widget.file.path,
-            defaultPage: currentPage!,
+          defaultPage: currentPage!,
         ),
-          Container(
-              alignment: Alignment.bottomCenter,
-              width: staticAd.size.width.toDouble(),
-              height: staticAd.size.height.toDouble(),
-              child: AdWidget(ad: staticAd),
-            ),
-      ]
-      ),
+        Container(
+          alignment: Alignment.bottomCenter,
+          width: staticAd.size.width.toDouble(),
+          height: staticAd.size.height.toDouble(),
+          child: AdWidget(ad: staticAd),
+        ),
+      ]),
     );
   }
 }

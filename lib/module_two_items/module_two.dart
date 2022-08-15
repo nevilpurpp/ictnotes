@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:ictnotes/screens/Home_ict.dart';
 
@@ -65,7 +66,9 @@ class _ModuleTwoState extends State<ModuleTwo> {
         },
         onAdFailedToLoad: (ad, error) {
           ad.dispose();
-          print('ad failed to load ${error.message}');
+          if (kDebugMode) {
+            print('ad failed to load ${error.message}');
+          }
         },
       ),
       request: request,
@@ -83,7 +86,9 @@ class _ModuleTwoState extends State<ModuleTwo> {
         }), onAdFailedToLoad: (error) {
           interstitialAttempt++;
           interstitialAd = null;
-          print('ad failed to load ${error.message}');
+          if (kDebugMode) {
+            print('ad failed to load ${error.message}');
+          }
           if (interstitialAttempt <= maxAttemps) {
             createInterstitialAd();
           }
@@ -120,12 +125,16 @@ class _ModuleTwoState extends State<ModuleTwo> {
         },
         onAdFailedToShowFullScreenContent: (ad, error) {
           ad.dispose();
-          print('failed to show ad $ad');
+          if (kDebugMode) {
+            print('failed to show ad $ad');
+          }
           createRewardedAd();
         });
     rewardedAd!.show(
       onUserEarnedReward: (ad, reward) {
-        print('reward video ${reward.amount}${reward.type}');
+        if (kDebugMode) {
+          print('reward video ${reward.amount}${reward.type}');
+        }
       },
     );
     rewardedAd = null;
@@ -133,7 +142,9 @@ class _ModuleTwoState extends State<ModuleTwo> {
 
   void showInterstistialAd() {
     if (interstitialAd == null) {
-      print('');
+      if (kDebugMode) {
+        print('');
+      }
       return;
     }
     interstitialAd!.fullScreenContentCallback = FullScreenContentCallback(
