@@ -12,7 +12,6 @@ import 'package:no_internet_check/internet_connectivity/navigation_Service.dart'
 import '../module_three_items/module_three.dart';
 import '../module_two_items/module_two.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:ictnotes/ad_helper.dart';
 
 const int maxAttemps = 3;
 
@@ -202,10 +201,14 @@ class _HomeIctState extends State<HomeIct> {
             expandedHeight: 300,
             actions: [
               IconButton(
-                  onPressed: () {
-                    showRewardedAd();
-                  },
-                  icon: const Icon(Icons.video_library_outlined))
+                onPressed: () {
+                  showRewardedAd();
+                },
+                icon: const Icon(
+                  Icons.video_library_outlined,
+                  semanticLabel: 'watch an ad',
+                ),
+              )
             ],
             flexibleSpace: FlexibleSpaceBar(
               background: Container(
@@ -215,7 +218,7 @@ class _HomeIctState extends State<HomeIct> {
           //sliver items
           SliverToBoxAdapter(
             child: Padding(
-              padding: EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(20.0),
               child: ClipRect(
                 child: GestureDetector(
                   child: Container(
@@ -328,14 +331,7 @@ class _HomeIctState extends State<HomeIct> {
               ),
             ),
           ),
-          SliverToBoxAdapter(
-            child: Container(
-              alignment: Alignment.bottomCenter,
-              width: inlineAd.size.width.toDouble(),
-              height: inlineAd.size.height.toDouble(),
-              child: AdWidget(ad: inlineAd),
-            ),
-          ),
+
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.all(20.0),
@@ -394,14 +390,6 @@ class _HomeIctState extends State<HomeIct> {
             ),
           ),
           //banner ads
-          SliverToBoxAdapter(
-            child: Container(
-              alignment: Alignment.bottomCenter,
-              width: staticAd.size.width.toDouble(),
-              height: staticAd.size.height.toDouble(),
-              child: AdWidget(ad: staticAd),
-            ),
-          ),
         ],
       ),
       drawer: Drawer(
@@ -424,7 +412,7 @@ class _HomeIctState extends State<HomeIct> {
                 ),
                 accountEmail: Text("nevilpurpp12@gmail.com"),
                 currentAccountPictureSize: Size.square(50),
-                currentAccountPicture: CircleAvatar(
+                currentAccountPicture: const CircleAvatar(
                   backgroundColor: Color.fromARGB(255, 165, 255, 137),
                   child: Text(
                     "N",
@@ -435,13 +423,14 @@ class _HomeIctState extends State<HomeIct> {
             ), //DrawerHeader
 
             AboutListTile(
-              icon: const Icon(
+              icon: Icon(
                 Icons.info,
-                color: Colors.indigo,
+                color: Colors.lightBlueAccent.shade700,
+                size: 40,
               ),
               applicationIcon: Icon(
                 Icons.info_outline,
-                color: Colors.indigo[800],
+                color: Colors.pink[800],
               ),
               applicationName: 'ICT NOTES AND PAST-PAPERS',
               applicationVersion: '2.6.1',
@@ -452,11 +441,13 @@ class _HomeIctState extends State<HomeIct> {
                     color: Colors.indigo, fontWeight: FontWeight.bold),
               ),
             ),
+            const Divider(),
 
             ListTile(
               leading: Icon(
                 Icons.more_outlined,
-                color: Colors.indigo[800],
+                color: Colors.green[800],
+                size: 40,
               ),
               title: const Text(
                 'more apps',
@@ -467,10 +458,12 @@ class _HomeIctState extends State<HomeIct> {
                 Navigator.pop(context);
               },
             ),
+            Divider(),
             ListTile(
               leading: Icon(
                 Icons.close_outlined,
-                color: Colors.indigo[800],
+                color: Colors.red[800],
+                size: 40,
               ),
               title: const Text(
                 'exit',
@@ -481,6 +474,7 @@ class _HomeIctState extends State<HomeIct> {
                 Navigator.pop(context);
               },
             ),
+            const Divider()
           ],
         ),
       ),

@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:ictnotes/screens/Home_ict.dart';
@@ -41,7 +42,9 @@ class _ListViewThreeState extends State<ListViewThree> {
         },
         onAdFailedToLoad: (ad, error) {
           ad.dispose();
-          print('ad failed to load ${error.message}');
+          if (kDebugMode) {
+            print('ad failed to load ${error.message}');
+          }
         },
       ),
       request: request,
@@ -61,7 +64,9 @@ class _ListViewThreeState extends State<ListViewThree> {
         },
         onAdFailedToLoad: (ad, error) {
           ad.dispose();
-          print('ad failed to load ${error.message}');
+          if (kDebugMode) {
+            print('ad failed to load ${error.message}');
+          }
         },
       ),
       request: request,
@@ -79,7 +84,9 @@ class _ListViewThreeState extends State<ListViewThree> {
         }), onAdFailedToLoad: (error) {
           interstitialAttempt++;
           interstitialAd = null;
-          print('ad failed to load ${error.message}');
+          if (kDebugMode) {
+            print('ad failed to load ${error.message}');
+          }
           if (interstitialAttempt <= maxAttemps) {
             createInterstitialAd();
           }
@@ -96,7 +103,9 @@ class _ListViewThreeState extends State<ListViewThree> {
         }), onAdFailedToLoad: (error) {
           rewardedAdAttempt++;
           rewardedAd = null;
-          print('ad failed to load ${error.message}');
+          if (kDebugMode) {
+            print('ad failed to load ${error.message}');
+          }
           if (rewardedAdAttempt <= maxAttemps) {
             createRewardedAd();
           }
@@ -105,7 +114,9 @@ class _ListViewThreeState extends State<ListViewThree> {
 
   void showRewardedAd() {
     if (rewardedAd == null) {
-      print('');
+      if (kDebugMode) {
+        print('');
+      }
       return;
     }
     rewardedAd!.fullScreenContentCallback = FullScreenContentCallback(
@@ -121,7 +132,9 @@ class _ListViewThreeState extends State<ListViewThree> {
         });
     rewardedAd!.show(
       onUserEarnedReward: (ad, reward) {
-        print('reward video ${reward.amount}${reward.type}');
+        if (kDebugMode) {
+          print('reward video ${reward.amount}${reward.type}');
+        }
       },
     );
     rewardedAd = null;
@@ -140,7 +153,9 @@ class _ListViewThreeState extends State<ListViewThree> {
         },
         onAdFailedToShowFullScreenContent: (ad, error) {
           ad.dispose();
-          print('failed to show ad $ad');
+          if (kDebugMode) {
+            print('failed to show ad $ad');
+          }
           createInterstitialAd();
         });
     interstitialAd!.show();
@@ -176,7 +191,7 @@ class _ListViewThreeState extends State<ListViewThree> {
 
                     openPDF(context, file);
                   },
-                    title: const Text('COMING SOON'),),
+                    title: const Text(''),),
                   ListTile(onTap: () async {
                     const url = '';
                     final file = await PDFApi.loadFirebase(url);
@@ -193,12 +208,6 @@ class _ListViewThreeState extends State<ListViewThree> {
                   },
                     title: const Text(''),
                   ),
-                   Container(
-              alignment: Alignment.bottomCenter,
-              width: staticAd.size.width.toDouble(),
-              height: staticAd.size.height.toDouble(),
-              child: AdWidget(ad: staticAd),
-            ),
 
                   ListTile(onTap: () async{const url = '';
                   final file = await PDFApi.loadFirebase(url);
@@ -225,28 +234,28 @@ class _ListViewThreeState extends State<ListViewThree> {
                     final file = await PDFApi.loadFirebase(url);
                     openPDF(context, file);
                     },
-                    title: Text(''),
+                    title: const Text(''),
                   ),
                   ListTile(
                     onTap: ()async {const url = '';
                     final file = await PDFApi.loadFirebase(url);
                     openPDF(context, file);
                     },
-                    title: Text(''),
+                    title: const Text(''),
                   ),
                   ListTile(
                     onTap: ()async {const url = '';
                     final file = await PDFApi.loadFirebase(url);
                     openPDF(context, file);
                     },
-                    title: Text(''),
+                    title: const Text(''),
                   ),
                   ListTile(
                     onTap: ()async {const url = '';
                     final file = await PDFApi.loadFirebase(url);
                     openPDF(context, file);
                     },
-                    title: Text(''),
+                    title: const Text(''),
                   ),
                   ListTile(
                     onTap: ()async {const url = '';
@@ -326,14 +335,14 @@ class _ListViewThreeState extends State<ListViewThree> {
                     final file = await PDFApi.loadFirebase(url);
                     openPDF(context, file);
                     },
-                    title: Text(''),
+                    title: const Text(''),
                   ),
                   ListTile(
                     onTap: ()async {const url = '';
                     final file = await PDFApi.loadFirebase(url);
                     openPDF(context, file);
                     },
-                    title: Text(''),
+                    title: const Text(''),
                   ),]
 
     )

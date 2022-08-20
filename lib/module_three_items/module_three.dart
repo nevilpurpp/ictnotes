@@ -171,13 +171,15 @@ class _ModuleThreeState extends State<ModuleThree> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
+          elevation: 5,
+          shadowColor: Colors.indigo.shade900,
           backgroundColor: Colors.deepPurple[800],
           leading: IconButton(
               onPressed: () {
                 Navigator.pop(context);
               },
-              icon: Icon(Icons.arrow_back_ios_outlined)),
-          title: Text(
+              icon: const Icon(Icons.arrow_back_ios_outlined)),
+          title: const Text(
             'MODULE THREE',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
@@ -232,6 +234,8 @@ class _ModuleThreeState extends State<ModuleThree> {
                         children: [
                           GestureDetector(
                             child: Card(
+                              shadowColor: Colors.indigo.shade900,
+                              elevation: 5,
                               child: Column(
                                 children: <Widget>[
                                   Image.asset('assets/Image 3.png'),
@@ -252,6 +256,8 @@ class _ModuleThreeState extends State<ModuleThree> {
                           ),
                           GestureDetector(
                               child: Card(
+                                shadowColor: Colors.indigo.shade900,
+                                elevation: 5,
                                 child: Column(
                                   children: <Widget>[
                                     Image.asset('assets/Image 3.png'),
@@ -271,6 +277,8 @@ class _ModuleThreeState extends State<ModuleThree> {
                               }),
                           GestureDetector(
                             child: Card(
+                              shadowColor: Colors.indigo.shade900,
+                              elevation: 5,
                               child: Column(
                                 children: <Widget>[
                                   Image.asset('assets/Image 3.png'),
@@ -291,6 +299,8 @@ class _ModuleThreeState extends State<ModuleThree> {
                           ),
                           GestureDetector(
                             child: Card(
+                              shadowColor: Colors.indigo.shade900,
+                              elevation: 5,
                               child: Column(
                                 children: <Widget>[
                                   Image.asset('assets/Image 3.png'),

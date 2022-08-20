@@ -219,6 +219,7 @@ class _PDFViewerPageState extends State<PDFViewerPage> {
           fitPolicy: FitPolicy.BOTH,
           filePath: widget.file.path,
           defaultPage: currentPage!,
+          nightMode: true,
         ),
         Container(
           alignment: Alignment.bottomCenter,

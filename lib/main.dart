@@ -4,8 +4,6 @@ import 'package:ictnotes/screens/Home_ict.dart';
 import 'package:ictnotes/module_one_items/module_one.dart';
 import 'dart:ui';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-
-import 'package:ictnotes/screens/Home_ict.dart';
 import 'package:no_internet_check/internet_connectivity/navigation_Service.dart';
 
 Future main() async {

@@ -177,13 +177,15 @@ class _ModuleOneState extends State<ModuleOne> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
+          elevation: 5,
+          shadowColor: Colors.indigo.shade900,
           backgroundColor: Colors.indigo[800],
           leading: IconButton(
               onPressed: () {
                 Navigator.pop(context);
               },
-              icon: Icon(Icons.arrow_back_ios_outlined)),
-          title: Text(
+              icon: const Icon(Icons.arrow_back_ios_outlined)),
+          title: const Text(
             'MODULE ONE',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
@@ -233,6 +235,8 @@ class _ModuleOneState extends State<ModuleOne> {
                         children: [
                           GestureDetector(
                             child: Card(
+                              shadowColor: Colors.indigo.shade900,
+                              elevation: 5,
                               child: Column(
                                 children: <Widget>[
                                   Image.asset('assets/Image 3.png'),
@@ -254,6 +258,8 @@ class _ModuleOneState extends State<ModuleOne> {
                           ),
                           GestureDetector(
                               child: Card(
+                                shadowColor: Colors.indigo.shade900,
+                                elevation: 5,
                                 child: Column(
                                   children: <Widget>[
                                     Image.asset('assets/Image 3.png'),
@@ -275,6 +281,8 @@ class _ModuleOneState extends State<ModuleOne> {
                               }),
                           GestureDetector(
                             child: Card(
+                              shadowColor: Colors.indigo.shade900,
+                              elevation: 5,
                               child: Column(
                                 children: <Widget>[
                                   Image.asset('assets/Image 3.png'),
@@ -297,6 +305,8 @@ class _ModuleOneState extends State<ModuleOne> {
                           ),
                           GestureDetector(
                             child: Card(
+                              shadowColor: Colors.indigo.shade900,
+                              elevation: 5,
                               child: Column(
                                 children: <Widget>[
                                   Image.asset('assets/Image 3.png'),
@@ -319,6 +329,8 @@ class _ModuleOneState extends State<ModuleOne> {
                           ),
                           GestureDetector(
                             child: Card(
+                              shadowColor: Colors.indigo.shade900,
+                              elevation: 5,
                               child: Column(
                                 children: <Widget>[
                                   Image.asset('assets/Image 3.png'),
@@ -341,6 +353,8 @@ class _ModuleOneState extends State<ModuleOne> {
                           ),
                           GestureDetector(
                             child: Card(
+                              shadowColor: Colors.indigo.shade900,
+                              elevation: 5,
                               child: Column(
                                 children: <Widget>[
                                   Image.asset('assets/Image 3.png'),

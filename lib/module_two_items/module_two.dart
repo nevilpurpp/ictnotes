@@ -8,7 +8,6 @@ import 'package:ictnotes/screens/Home_ict.dart';
 import '../api/pdf_api.dart';
 import '../pdf_viewer/pdf_viewer_page.dart';
 import 'list_view_two/list_view_two.dart';
-import 'package:ictnotes/ad_helper.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class ModuleTwo extends StatefulWidget {
@@ -105,7 +104,9 @@ class _ModuleTwoState extends State<ModuleTwo> {
         }), onAdFailedToLoad: (error) {
           rewardedAdAttempt++;
           rewardedAd = null;
-          print('ad failed to load ${error.message}');
+          if (kDebugMode) {
+            print('ad failed to load ${error.message}');
+          }
           if (rewardedAdAttempt <= maxAttemps) {
             createRewardedAd();
           }
@@ -114,7 +115,9 @@ class _ModuleTwoState extends State<ModuleTwo> {
 
   void showRewardedAd() {
     if (rewardedAd == null) {
-      print('');
+      if (kDebugMode) {
+        print('');
+      }
       return;
     }
     rewardedAd!.fullScreenContentCallback = FullScreenContentCallback(
@@ -155,7 +158,9 @@ class _ModuleTwoState extends State<ModuleTwo> {
         },
         onAdFailedToShowFullScreenContent: (ad, error) {
           ad.dispose();
-          print('failed to show ad $ad');
+          if (kDebugMode) {
+            print('failed to show ad $ad');
+          }
           createInterstitialAd();
         });
     interstitialAd!.show();
@@ -185,6 +190,8 @@ class _ModuleTwoState extends State<ModuleTwo> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
+          shadowColor: Colors.indigo.shade900,
+          elevation: 5,
           backgroundColor: Colors.deepPurple[800],
           leading: IconButton(
               onPressed: () {
@@ -241,6 +248,8 @@ class _ModuleTwoState extends State<ModuleTwo> {
                         children: [
                           GestureDetector(
                             child: Card(
+                              shadowColor: Colors.indigo.shade900,
+                              elevation: 5,
                               child: Column(
                                 children: <Widget>[
                                   Image.asset('assets/Image 3.png'),
@@ -261,6 +270,8 @@ class _ModuleTwoState extends State<ModuleTwo> {
                           ),
                           GestureDetector(
                               child: Card(
+                                shadowColor: Colors.indigo.shade900,
+                                elevation: 5,
                                 child: Column(
                                   children: <Widget>[
                                     Image.asset('assets/Image 3.png'),
@@ -281,6 +292,8 @@ class _ModuleTwoState extends State<ModuleTwo> {
                               }),
                           GestureDetector(
                             child: Card(
+                              shadowColor: Colors.indigo.shade900,
+                              elevation: 5,
                               child: Column(
                                 children: <Widget>[
                                   Image.asset('assets/Image 3.png'),
@@ -302,6 +315,8 @@ class _ModuleTwoState extends State<ModuleTwo> {
                           ),
                           GestureDetector(
                             child: Card(
+                              shadowColor: Colors.indigo.shade900,
+                              elevation: 5,
                               child: Column(
                                 children: <Widget>[
                                   Image.asset('assets/Image 3.png'),
@@ -322,6 +337,8 @@ class _ModuleTwoState extends State<ModuleTwo> {
                           ),
                           GestureDetector(
                             child: Card(
+                              shadowColor: Colors.indigo.shade900,
+                              elevation: 5,
                               child: Column(
                                 children: <Widget>[
                                   Image.asset('assets/Image 3.png'),
@@ -343,6 +360,8 @@ class _ModuleTwoState extends State<ModuleTwo> {
                           ),
                           GestureDetector(
                             child: Card(
+                              shadowColor: Colors.indigo.shade900,
+                              elevation: 5,
                               child: Column(
                                 children: <Widget>[
                                   Image.asset('assets/Image 3.png'),

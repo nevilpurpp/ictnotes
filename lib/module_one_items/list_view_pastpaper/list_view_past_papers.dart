@@ -1,11 +1,13 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:ictnotes/screens/Home_ict.dart';
 
 import '../../api/pdf_api.dart';
 import '../../pdf_viewer/pdf_viewer_page.dart';
+
 class ListViewPastPapers extends StatefulWidget {
   const ListViewPastPapers({Key? key}) : super(key: key);
 
@@ -79,7 +81,9 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
         }), onAdFailedToLoad: (error) {
           interstitialAttempt++;
           interstitialAd = null;
-          print('ad failed to load ${error.message}');
+          if (kDebugMode) {
+            print('ad failed to load ${error.message}');
+          }
           if (interstitialAttempt <= maxAttemps) {
             createInterstitialAd();
           }
@@ -160,343 +164,415 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
   void dispose() {
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        scrollDirection: Axis.vertical,
+        body: ListView(scrollDirection: Axis.vertical, children: [
+      ExpansionTile(
+        title: Text(
+          'ICTE PAST-PAPERS',
+          style: TextStyle(
+              color: Colors.indigo.shade900, fontWeight: FontWeight.bold),
+        ),
+        leading: Image.asset('assets/Image 5.png'),
         children: [
-          ExpansionTile(title: const Text('ICTE PAST-PAPERS'),
-            leading: Image.asset('assets/Image 5.png'),
-            children: [
-              ListTile(onTap: () async {showRewardedAd();
-                const url = '/module one/pastpapers/icte/ICTE JULY 2017.pdf';
-                final file = await PDFApi.loadFirebase(url);
-
-
-                openPDF(context, file);
-              },
-                title: const Text('ICTE JULY 2017'),
-              ),
-              ListTile(onTap: () async {showInterstistialAd();
-                const url = '/module one/pastpapers/icte/ICTE NOVEMBER 2017.pdf';
-                final file = await PDFApi.loadFirebase(url);
-
-
-                openPDF(context, file);
-              },
-                title: Text('ICTE NOVEMBER 2017'),
-              ),
-              ListTile(onTap: ()async {showRewardedAd();
-                const url = '/module one/pastpapers/icte/ICTE JULY 2018.pdf';
+          ListTile(
+            onTap: () async {
+              showRewardedAd();
+              const url = '/module one/pastpapers/icte/ICTE JULY 2017.pdf';
               final file = await PDFApi.loadFirebase(url);
-                openPDF(context, file);
-              },
-              title: const Text('ICTE JULY 2018'),
-              ),
-              ListTile(onTap: () async{showRewardedAd();
-                const url = '/module one/pastpapers/icte/ICTE NOVEMBER 2021.pdf';
-              final file = await PDFApi.loadFirebase(url);
+
               openPDF(context, file);
-              },
-              title: const Text('ICTE NOVEMBER 2021')
-              ),
-
-            ],
+            },
+            title: const Text('ICTE JULY 2017'),
           ),
+          ListTile(
+            onTap: () async {
+              showInterstistialAd();
+              const url = '/module one/pastpapers/icte/ICTE NOVEMBER 2017.pdf';
+              final file = await PDFApi.loadFirebase(url);
 
-          ExpansionTile(title: Text('STRUCTURED PROGRAMMING PAST-PAPERS'),
-            leading: Image.asset('assets/Image 5.png'),
-            children: [
-              ListTile(
-                onTap: ()async {showRewardedAd();
-                  const url = '/module one/pastpapers/structured programming/SP 2017 JULY.pdf';
+              openPDF(context, file);
+            },
+            title: Text('ICTE NOVEMBER 2017'),
+          ),
+          ListTile(
+            onTap: () async {
+              showRewardedAd();
+              const url = '/module one/pastpapers/icte/ICTE JULY 2018.pdf';
+              final file = await PDFApi.loadFirebase(url);
+              openPDF(context, file);
+            },
+            title: const Text('ICTE JULY 2018'),
+          ),
+          ListTile(
+              onTap: () async {
+                showRewardedAd();
+                const url =
+                    '/module one/pastpapers/icte/ICTE NOVEMBER 2021.pdf';
                 final file = await PDFApi.loadFirebase(url);
                 openPDF(context, file);
-                },
-                title: Text('SP 2017 JULY'),
-              ),
-              ListTile(
-                onTap: () async{showRewardedAd();
-                  const url = '/module one/pastpapers/structured programming/SP 2017 NOVEMBER.pdf';
+              },
+              title: const Text('ICTE NOVEMBER 2021')),
+        ],
+      ),
+      ExpansionTile(
+        title: Text(
+          'STRUCTURED PROGRAMMING PAST-PAPERS',
+          style: TextStyle(
+              color: Colors.indigo.shade900, fontWeight: FontWeight.bold),
+        ),
+        leading: Image.asset('assets/Image 5.png'),
+        children: [
+          ListTile(
+            onTap: () async {
+              showRewardedAd();
+              const url =
+                  '/module one/pastpapers/structured programming/SP 2017 JULY.pdf';
+              final file = await PDFApi.loadFirebase(url);
+              openPDF(context, file);
+            },
+            title: Text('SP 2017 JULY'),
+          ),
+          ListTile(
+            onTap: () async {
+              showRewardedAd();
+              const url =
+                  '/module one/pastpapers/structured programming/SP 2017 NOVEMBER.pdf';
+              final file = await PDFApi.loadFirebase(url);
+              openPDF(context, file);
+            },
+            title: Text('SP 2017 NOVEMBER'),
+          ),
+          ListTile(
+            onTap: () async {
+              showInterstistialAd();
+              const url =
+                  '/module one/pastpapers/structured programming/STRUCTURED PROGRAMMING JULY 2018.pdf';
+              final file = await PDFApi.loadFirebase(url);
+              openPDF(context, file);
+            },
+            title: Text('SP 2018 JULY'),
+          ),
+          ListTile(
+            onTap: () async {
+              showRewardedAd();
+              const url =
+                  '/module one/pastpapers/structured programming/STRUCTURED PROGRAMMING NOV 2016.pdf';
+              final file = await PDFApi.loadFirebase(url);
+              openPDF(context, file);
+            },
+            title: Text('SP 2016 NOVEMBER'),
+          ),
+          ListTile(
+            onTap: () async {
+              showInterstistialAd();
+              const url =
+                  '/module one/pastpapers/structured programming/SP 2021 JULY.pdf';
+              final file = await PDFApi.loadFirebase(url);
+              openPDF(context, file);
+            },
+            title: Text('SP 2021 JULY'),
+          ),
+          ListTile(
+            onTap: () async {
+              showRewardedAd();
+              const url = '/module one/notes/Programming in C.pdf';
+              final file = await PDFApi.loadFirebase(url);
+              openPDF(context, file);
+            },
+            title: Text('SP 2021 NOVEMBER'),
+          ),
+        ],
+      ),
+      ExpansionTile(
+        title: Text(
+          'COMPUTER APPLICATION PAST-PAPERS',
+          style: TextStyle(
+              color: Colors.indigo.shade900, fontWeight: FontWeight.bold),
+        ),
+        leading: Image.asset('assets/Image 5.png'),
+        children: [
+          ListTile(
+            onTap: () async {
+              showInterstistialAd();
+              const url =
+                  '/module one/pastpapers/computer application/CA JULY 2016 THEORY.pdf';
+              final file = await PDFApi.loadFirebase(url);
+              openPDF(context, file);
+            },
+            title: Text('CA JULY 2016 THEORY'),
+          ),
+          ListTile(
+            onTap: () async {
+              showInterstistialAd();
+              const url =
+                  '/module one/pastpapers/computer application/CA JULY 2017 PRAC.pdf';
+              final file = await PDFApi.loadFirebase(url);
+              openPDF(context, file);
+            },
+            title: Text('CA JULY 2017 PRACTICAL'),
+          ),
+          ListTile(
+            onTap: () async {
+              showRewardedAd();
+              const url =
+                  '/module one/pastpapers/computer application/CA NOV 2017 PRAC.pdf';
+              final file = await PDFApi.loadFirebase(url);
+              openPDF(context, file);
+            },
+            title: Text('CA NOVEMBER 2017 PRACTICAL'),
+          ),
+          ListTile(
+            onTap: () async {
+              showRewardedAd();
+              const url =
+                  '/module one/pastpapers/computer application/CA NOV 2018 THEORY.pdf';
+              final file = await PDFApi.loadFirebase(url);
+              openPDF(context, file);
+            },
+            title: Text('CA NOVEMBER 2018 THEORY'),
+          ),
+          ListTile(
+            onTap: () async {
+              showRewardedAd();
+              const url =
+                  '/module one/pastpapers/computer application/CA JULY 2019 THEORY.pdf';
+              final file = await PDFApi.loadFirebase(url);
+              openPDF(context, file);
+            },
+            title: Text('CA JULY 2019 THEORY'),
+          ),
+          ListTile(
+            onTap: () async {
+              showInterstistialAd();
+              const url =
+                  '/module one/pastpapers/computer application/CA JULY 2019 PRAC.pdf';
+              final file = await PDFApi.loadFirebase(url);
+              openPDF(context, file);
+            },
+            title: Text('CA JULY 2019 PRACTICAL'),
+          ),
+          ListTile(
+            onTap: () async {
+              showInterstistialAd();
+              const url =
+                  '/module one/pastpapers/computer application/CA NOV 2021 THEORY.pdf';
+              final file = await PDFApi.loadFirebase(url);
+              openPDF(context, file);
+            },
+            title: Text('CA NOVEMBER 2021 THEORY'),
+          ),
+        ],
+      ),
+      ExpansionTile(
+        title: Text(
+          'MATH PAST-PAPERS',
+          style: TextStyle(
+              color: Colors.indigo.shade900, fontWeight: FontWeight.bold),
+        ),
+        leading: Image.asset('assets/Image 5.png'),
+        children: [
+          ListTile(
+            onTap: () async {
+              showRewardedAd();
+              const url = '/module one/pastpapers/math/MATH NOV 2015.pdf';
+              final file = await PDFApi.loadFirebase(url);
+              openPDF(context, file);
+            },
+            title: Text('MATH NOVEMBER 2015'),
+          ),
+          ListTile(
+            onTap: () async {
+              showRewardedAd();
+              const url = '/module one/pastpapers/math/MATH NOV 2016.pdf';
+              final file = await PDFApi.loadFirebase(url);
+              openPDF(context, file);
+            },
+            title: Text('MATH NOVEMBER 2016'),
+          ),
+          ListTile(
+            onTap: () async {
+              showInterstistialAd();
+              const url = '/module one/pastpapers/math/MATH JULY 2017.pdf';
+              final file = await PDFApi.loadFirebase(url);
+              openPDF(context, file);
+            },
+            title: Text('MATH JULY 2017'),
+          ),
+          ListTile(
+            onTap: () async {
+              showInterstistialAd();
+              const url = '/module one/pastpapers/math/MATH NOV 2017.pdf';
+              final file = await PDFApi.loadFirebase(url);
+              openPDF(context, file);
+            },
+            title: Text('MATH NOVEMBER 2017'),
+          ),
+          ListTile(
+            onTap: () async {
+              showInterstistialAd();
+              const url = '/module one/pastpapers/math/MATH JULY 2018.pdf';
+              final file = await PDFApi.loadFirebase(url);
+              openPDF(context, file);
+            },
+            title: Text('MATH JULY 2018'),
+          ),
+          ListTile(
+            onTap: () async {
+              showInterstistialAd();
+              const url = '/module one/pastpapers/math/MATH NOV 2018.pdf';
+              final file = await PDFApi.loadFirebase(url);
+              openPDF(context, file);
+            },
+            title: Text('MATH NOVEMBER 2018'),
+          ),
+          ListTile(
+            onTap: () async {
+              showRewardedAd();
+              const url = '/module one/notes/Programming in C.pdf';
+              final file = await PDFApi.loadFirebase(url);
+              openPDF(context, file);
+            },
+            title: Text('MATH JULY 2019'),
+          ),
+          ListTile(
+            onTap: () async {
+              showRewardedAd();
+              const url = '/module one/pastpapers/math/MATH JULY 2021.pdf';
+              final file = await PDFApi.loadFirebase(url);
+              openPDF(context, file);
+            },
+            title: Text('MATH JULY 2021'),
+          ),
+          ListTile(
+            onTap: () async {
+              showRewardedAd();
+              const url = '/module one/pastpapers/math/MATH NOV 2021.pdf';
+              final file = await PDFApi.loadFirebase(url);
+              openPDF(context, file);
+            },
+            title: Text('MATH NOVEMBER 2021'),
+          ),
+        ],
+      ),
+      ExpansionTile(
+        title: Text(
+          'OPERATING SYSTEM PAST-PAPERS',
+          style: TextStyle(
+              color: Colors.indigo.shade900, fontWeight: FontWeight.bold),
+        ),
+        leading: Image.asset('assets/Image 5.png'),
+        children: [
+          ListTile(
+            onTap: () async {
+              showRewardedAd();
+              const url =
+                  '/module one/pastpapers/operating system/OS JULY 2017.pdf';
+              final file = await PDFApi.loadFirebase(url);
+              openPDF(context, file);
+            },
+            title: Text('OS JULY 2017'),
+          ),
+          ListTile(
+            onTap: () async {
+              showInterstistialAd();
+              const url =
+                  '/module one/pastpapers/operating system/OS NOV 2017.pdf';
+              final file = await PDFApi.loadFirebase(url);
+              openPDF(context, file);
+            },
+            title: Text('OS NOVEMBER 2017'),
+          ),
+          ListTile(
+            onTap: () async {
+              showRewardedAd();
+              const url =
+                  '/module one/pastpapers/operating system/OS JULY 2018.pdf';
+              final file = await PDFApi.loadFirebase(url);
+              openPDF(context, file);
+            },
+            title: Text('OS JULY 2018'),
+          ),
+          ListTile(
+            onTap: () async {
+              showRewardedAd();
+              const url =
+                  '/module one/pastpapers/operating system/OS JULY 2019.pdf';
+              final file = await PDFApi.loadFirebase(url);
+              openPDF(context, file);
+            },
+            title: Text('OS JULY 2019'),
+          ),
+          ListTile(
+            onTap: () async {
+              showInterstistialAd();
+              const url =
+                  '/module one/pastpapers/operating system/OS JULY 2020.pdf';
+              final file = await PDFApi.loadFirebase(url);
+              openPDF(context, file);
+            },
+            title: Text('OS JULY 2020'),
+          ),
+          ListTile(
+            onTap: () async {
+              showInterstistialAd();
+              const url =
+                  '/module one/pastpapers/operating system/OS JULY 2021.pdf';
+              final file = await PDFApi.loadFirebase(url);
+              openPDF(context, file);
+            },
+            title: Text('OS JULY 2021'),
+          ),
+        ],
+      ),
+      ExpansionTile(
+          title: Text(
+            'COMMUNICATION SKILLS PAST-PAPERS',
+            style: TextStyle(
+                color: Colors.indigo.shade900, fontWeight: FontWeight.bold),
+          ),
+          leading: Image.asset('assets/Image 5.png'),
+          children: [
+            ListTile(
+              onTap: () async {
+                showInterstistialAd();
+                const url =
+                    '/module one/pastpapers/communication skills/CS JULY 2017.pdf';
                 final file = await PDFApi.loadFirebase(url);
                 openPDF(context, file);
-                },
-                title: Text('SP 2017 NOVEMBER'),
-              ),
-              ListTile(
-                onTap: ()async {showInterstistialAd();
-                  const url = '/module one/pastpapers/structured programming/STRUCTURED PROGRAMMING JULY 2018.pdf';
-                final file = await PDFApi.loadFirebase(url);
-                openPDF(context, file);
-                },
-                title: Text('SP 2018 JULY'),
-              ),
-
-
-              ListTile(
-                onTap: ()async {showRewardedAd();
-                  const url = '/module one/pastpapers/structured programming/STRUCTURED PROGRAMMING NOV 2016.pdf';
-                final file = await PDFApi.loadFirebase(url);
-                openPDF(context, file);
-                },
-                title: Text('SP 2016 NOVEMBER'),
-              ),
-              ListTile(
-                onTap: ()async {showInterstistialAd();
-                  const url = '/module one/pastpapers/structured programming/SP 2021 JULY.pdf';
-                final file = await PDFApi.loadFirebase(url);
-                openPDF(context, file);
-                },
-                title: Text('SP 2021 JULY'),
-              ),
-              ListTile(
-                onTap: ()async {showRewardedAd();
-                  const url = '/module one/notes/Programming in C.pdf';
-                final file = await PDFApi.loadFirebase(url);
-                openPDF(context, file);
-                },
-                title: Text('SP 2021 NOVEMBER'),
-              ),
-            ],),
-          ExpansionTile(title: Text('COMPUTER APPLICATION PAST-PAPERS'),
-            leading: Image.asset('assets/Image 5.png'),
-            children: [
-              ListTile(
-                onTap: ()async {showInterstistialAd();
-                  const url = '/module one/pastpapers/computer application/CA JULY 2016 THEORY.pdf';
-                final file = await PDFApi.loadFirebase(url);
-                openPDF(context, file);
-                },
-                title: Text('CA JULY 2016 THEORY'),
-              ),
-              ListTile(
-                onTap: ()async {showInterstistialAd();
-                  const url = '/module one/pastpapers/computer application/CA JULY 2017 PRAC.pdf';
-                final file = await PDFApi.loadFirebase(url);
-                openPDF(context, file);
-                },
-                title: Text('CA JULY 2017 PRACTICAL'),
-              ),
-              ListTile(
-                onTap: ()async {showRewardedAd();
-                  const url = '/module one/pastpapers/computer application/CA NOV 2017 PRAC.pdf';
-                final file = await PDFApi.loadFirebase(url);
-                openPDF(context, file);
-                },
-                title: Text('CA NOVEMBER 2017 PRACTICAL'),
-              ),
-
-
-              ListTile(
-                onTap: ()async {showRewardedAd();
-                  const url = '/module one/pastpapers/computer application/CA NOV 2018 THEORY.pdf';
-                final file = await PDFApi.loadFirebase(url);
-                openPDF(context, file);
-                },
-                title: Text('CA NOVEMBER 2018 THEORY'),
-              ),
-              ListTile(
-                onTap: ()async {showRewardedAd();
-                  const url = '/module one/pastpapers/computer application/CA JULY 2019 THEORY.pdf';
-                final file = await PDFApi.loadFirebase(url);
-                openPDF(context, file);
-                },
-                title: Text('CA JULY 2019 THEORY'),
-              ),
-              ListTile(
-                onTap: () async{showInterstistialAd();
-                  const url = '/module one/pastpapers/computer application/CA JULY 2019 PRAC.pdf';
-                final file = await PDFApi.loadFirebase(url);
-                openPDF(context, file);
-                },
-                title: Text('CA JULY 2019 PRACTICAL'),
-              ),
-              ListTile(
-                onTap: () async{showInterstistialAd();
-                  const url = '/module one/pastpapers/computer application/CA NOV 2021 THEORY.pdf';
-                final file = await PDFApi.loadFirebase(url);
-                openPDF(context, file);
-                },
-                title: Text('CA NOVEMBER 2021 THEORY'),
-              ),
-            ],),
-          ExpansionTile(title: const Text('MATH PAST-PAPERS'),
-            leading: Image.asset('assets/Image 5.png'),
-            children: [
-              ListTile(
-                onTap: ()async {showRewardedAd();
-                  const url = '/module one/pastpapers/math/MATH NOV 2015.pdf';
-                final file = await PDFApi.loadFirebase(url);
-                openPDF(context, file);
-                },
-                title: Text('MATH NOVEMBER 2015'),
-              ),
-              ListTile(
-                onTap: ()async {showRewardedAd();
-                  const url = '/module one/pastpapers/math/MATH NOV 2016.pdf';
-                final file = await PDFApi.loadFirebase(url);
-                openPDF(context, file);
-                },
-                title: Text('MATH NOVEMBER 2016'),
-              ),
-
-
-              ListTile(
-                onTap: ()async {showInterstistialAd();
-                  const url = '/module one/pastpapers/math/MATH JULY 2017.pdf';
-                final file = await PDFApi.loadFirebase(url);
-                openPDF(context, file);
-                },
-                title: Text('MATH JULY 2017'),
-              ),
-              ListTile(
-                onTap: ()async {showInterstistialAd();
-                  const url = '/module one/pastpapers/math/MATH NOV 2017.pdf';
-                final file = await PDFApi.loadFirebase(url);
-                openPDF(context, file);
-                },
-                title: Text('MATH NOVEMBER 2017'),
-              ),
-              ListTile(
-                onTap: ()async {showInterstistialAd();
-                  const url = '/module one/pastpapers/math/MATH JULY 2018.pdf';
-                final file = await PDFApi.loadFirebase(url);
-                openPDF(context, file);
-                },
-                title: Text('MATH JULY 2018'),
-              ),
-
-
-              ListTile(
-                onTap: ()async {showInterstistialAd();
-                  const url = '/module one/pastpapers/math/MATH NOV 2018.pdf';
-                final file = await PDFApi.loadFirebase(url);
-                openPDF(context, file);
-                },
-                title: Text('MATH NOVEMBER 2018'),
-              ),
-              ListTile(
-                onTap: ()async {showRewardedAd();
-                  const url = '/module one/notes/Programming in C.pdf';
-                final file = await PDFApi.loadFirebase(url);
-                openPDF(context, file);
-                },
-                title: Text('MATH JULY 2019'),
-              ),
-              ListTile(
-                onTap: ()async {showRewardedAd();
-                  const url = '/module one/pastpapers/math/MATH JULY 2021.pdf';
-                final file = await PDFApi.loadFirebase(url);
-                openPDF(context, file);
-                },
-                title: Text('MATH JULY 2021'),
-              ),
-              ListTile(
-                onTap: ()async {showRewardedAd();
-                  const url = '/module one/pastpapers/math/MATH NOV 2021.pdf';
-                final file = await PDFApi.loadFirebase(url);
-                openPDF(context, file);
-                },
-                title: Text('MATH NOVEMBER 2021'),
-              ),
-            ],),
-          Container(
-              alignment: Alignment.bottomCenter,
-              width: staticAd.size.width.toDouble(),
-              height: staticAd.size.height.toDouble(),
-              child: AdWidget(ad: staticAd),
+              },
+              title: Text('CS JULY 2017'),
             ),
-          ExpansionTile(title: const Text('OPERATING SYSTEM PAST-PAPERS'),
-            leading: Image.asset('assets/Image 5.png'),
-            children: [
-              ListTile(onTap: () async{showRewardedAd();
-                const url = '/module one/pastpapers/operating system/OS JULY 2017.pdf';
-              final file = await PDFApi.loadFirebase(url);
-              openPDF(context, file);
-              },
-                title: Text('OS JULY 2017'),
-              ),
-              ListTile(
-                onTap: ()async {showInterstistialAd();
-                  const url = '/module one/pastpapers/operating system/OS NOV 2017.pdf';
+            ListTile(
+              onTap: () async {
+                showRewardedAd();
+                const url =
+                    '/module one/pastpapers/communication skills/CS NOV 2017.pdf';
                 final file = await PDFApi.loadFirebase(url);
                 openPDF(context, file);
-                },
-                title: Text('OS NOVEMBER 2017'),
-              ),
-              ListTile(
-                onTap: ()async {showRewardedAd();
-                  const url = '/module one/pastpapers/operating system/OS JULY 2018.pdf';
+              },
+              title: Text('CS NOVEMBER 2017'),
+            ),
+            ListTile(
+              onTap: () async {
+                showRewardedAd();
+                const url =
+                    '/module one/pastpapers/communication skills/CS JULY 2018.pdf';
                 final file = await PDFApi.loadFirebase(url);
                 openPDF(context, file);
-                },
-                title: Text('OS JULY 2018'),
-              ),
-
-
-              ListTile(onTap: ()async {showRewardedAd();
-                const url = '/module one/pastpapers/operating system/OS JULY 2019.pdf';
-              final file = await PDFApi.loadFirebase(url);
-              openPDF(context, file);
               },
-                title: Text('OS JULY 2019'),
-              ),
-              ListTile(onTap: () async{showInterstistialAd();
-                const url = '/module one/pastpapers/operating system/OS JULY 2020.pdf';
-              final file = await PDFApi.loadFirebase(url);
-              openPDF(context, file);
-              },
-                title: Text('OS JULY 2020'),
-              ),
-              ListTile(
-                onTap: ()async {showInterstistialAd();
-                  const url = '/module one/pastpapers/operating system/OS JULY 2021.pdf';
-                final file = await PDFApi.loadFirebase(url);
-                openPDF(context, file);
-                },
-                title: Text('OS JULY 2021'),
-              ),
-            ],),
-          ExpansionTile(title: const Text('COMMUNICATION SKILLS PAST-PAPERS'),
-            leading: Image.asset('assets/Image 5.png'),
-            children: [
-              ListTile(onTap: ()async {showInterstistialAd();
-                const url = '/module one/pastpapers/communication skills/CS JULY 2017.pdf';
-              final file = await PDFApi.loadFirebase(url);
-              openPDF(context, file);
-              },
-                title: Text('CS JULY 2017'),
-              ),
-              ListTile(onTap: ()async {showRewardedAd();
-                const url = '/module one/pastpapers/communication skills/CS NOV 2017.pdf';
-              final file = await PDFApi.loadFirebase(url);
-              openPDF(context, file);
-              },
-                title: Text('CS NOVEMBER 2017'),
-              ),
-              ListTile(onTap: () async{showRewardedAd();
-                const url = '/module one/pastpapers/communication skills/CS JULY 2018.pdf';
-              final file = await PDFApi.loadFirebase(url);
-              openPDF(context, file);
-              },
-                title: Text('CS JULY 2018'),
-              ),
-
-
-    ]
-    )
-   ]
-      )
-    );
-
-
-
+              title: Text('CS JULY 2018'),
+            ),
+          ])
+    ]));
   }
 
-  void openPDF(BuildContext context, File file,) =>
+  void openPDF(
+    BuildContext context,
+    File file,
+  ) =>
       Navigator.of(context).push(
           MaterialPageRoute(builder: (context) => PDFViewerPage(file: file)));
-
-
 }
