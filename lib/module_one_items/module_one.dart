@@ -250,6 +250,7 @@ class _ModuleOneState extends State<ModuleOne> {
                             ),
                             onTap: () async {
                               showInterstistialAd();
+                              const CircularProgressIndicator();
                               const url = '/module one/notes/ICT NOTES-2-1.pdf';
                               final file = await PDFApi.loadFirebase(url);
 
@@ -273,6 +274,7 @@ class _ModuleOneState extends State<ModuleOne> {
                               ),
                               onTap: () async {
                                 showInterstistialAd();
+                                const CircularProgressIndicator();
                                 const url =
                                     '/module one/notes/Computer Application 1.pdf';
                                 final file = await PDFApi.loadFirebase(url);
@@ -296,6 +298,7 @@ class _ModuleOneState extends State<ModuleOne> {
                             ),
                             onTap: () async {
                               showInterstistialAd();
+                              const CircularProgressIndicator();
                               const url =
                                   '/module one/notes/EE_NOTES(3)[2].pdf';
                               final file = await PDFApi.loadFirebase(url);
@@ -320,6 +323,7 @@ class _ModuleOneState extends State<ModuleOne> {
                             ),
                             onTap: () async {
                               showInterstistialAd();
+                              const CircularProgressIndicator();
                               const url =
                                   '/module one/notes/COMM-SKILLS-NOTES.pdf';
                               final file = await PDFApi.loadFirebase(url);
@@ -343,7 +347,8 @@ class _ModuleOneState extends State<ModuleOne> {
                               ),
                             ),
                             onTap: () async {
-                              showRewardedAd();
+                              showInterstistialAd();
+                              const CircularProgressIndicator();
                               const url =
                                   '/module one/notes/Operating System NOTES.pdf';
                               final file = await PDFApi.loadFirebase(url);
@@ -367,7 +372,8 @@ class _ModuleOneState extends State<ModuleOne> {
                               ),
                             ),
                             onTap: () async {
-                              showRewardedAd();
+                              showInterstistialAd();
+                              const CircularProgressIndicator();
                               const url =
                                   '/module one/notes/Programming in C.pdf';
                               final file = await PDFApi.loadFirebase(url);

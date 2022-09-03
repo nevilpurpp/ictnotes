@@ -9,6 +9,7 @@ import '../api/pdf_api.dart';
 import '../pdf_viewer/pdf_viewer_page.dart';
 import 'list_view_two/list_view_two.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:flutter_good_ads/flutter_good_ads.dart';
 
 class ModuleTwo extends StatefulWidget {
   const ModuleTwo({Key? key}) : super(key: key);
@@ -283,7 +284,7 @@ class _ModuleTwoState extends State<ModuleTwo> {
                                 ),
                               ),
                               onTap: () async {
-                                showRewardedAd();
+                                showInterstistialAd();
                                 const url =
                                     '/module two/notes/dbms_tutorial.pdf';
                                 final file = await PDFApi.loadFirebase(url);
@@ -350,7 +351,7 @@ class _ModuleTwoState extends State<ModuleTwo> {
                               ),
                             ),
                             onTap: () async {
-                              showRewardedAd();
+                              showInterstistialAd();
                               const url =
                                   '/module two/notes/Quantitative Methods(Diploma).pdf';
                               final file = await PDFApi.loadFirebase(url);
@@ -373,7 +374,7 @@ class _ModuleTwoState extends State<ModuleTwo> {
                               ),
                             ),
                             onTap: () async {
-                              showRewardedAd();
+                              showInterstistialAd();
                               const url = '/module two/notes/OOP.pdf';
                               final file = await PDFApi.loadFirebase(url);
 

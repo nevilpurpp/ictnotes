@@ -179,7 +179,7 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
         children: [
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url = '/module one/pastpapers/icte/ICTE JULY 2017.pdf';
               final file = await PDFApi.loadFirebase(url);
 
@@ -199,7 +199,7 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url = '/module one/pastpapers/icte/ICTE JULY 2018.pdf';
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
@@ -208,7 +208,7 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
           ),
           ListTile(
               onTap: () async {
-                showRewardedAd();
+                showInterstistialAd();
                 const url =
                     '/module one/pastpapers/icte/ICTE NOVEMBER 2021.pdf';
                 final file = await PDFApi.loadFirebase(url);
@@ -227,7 +227,7 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
         children: [
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url =
                   '/module one/pastpapers/structured programming/SP 2017 JULY.pdf';
               final file = await PDFApi.loadFirebase(url);
@@ -237,7 +237,7 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url =
                   '/module one/pastpapers/structured programming/SP 2017 NOVEMBER.pdf';
               final file = await PDFApi.loadFirebase(url);
@@ -277,8 +277,9 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
-              const url = '/module one/notes/Programming in C.pdf';
+              showInterstistialAd();
+              const url =
+                  '/module one/notes/STRUCTURED PROGRAMMING NOV 2021.pdf';
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
             },
@@ -316,7 +317,7 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url =
                   '/module one/pastpapers/computer application/CA NOV 2017 PRAC.pdf';
               final file = await PDFApi.loadFirebase(url);
@@ -326,7 +327,7 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url =
                   '/module one/pastpapers/computer application/CA NOV 2018 THEORY.pdf';
               final file = await PDFApi.loadFirebase(url);
@@ -336,7 +337,7 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url =
                   '/module one/pastpapers/computer application/CA JULY 2019 THEORY.pdf';
               final file = await PDFApi.loadFirebase(url);
@@ -376,7 +377,7 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
         children: [
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url = '/module one/pastpapers/math/MATH NOV 2015.pdf';
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
@@ -385,7 +386,7 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url = '/module one/pastpapers/math/MATH NOV 2016.pdf';
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
@@ -439,7 +440,7 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url = '/module one/pastpapers/math/MATH JULY 2021.pdf';
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
@@ -448,7 +449,7 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url = '/module one/pastpapers/math/MATH NOV 2021.pdf';
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
@@ -467,7 +468,7 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
         children: [
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url =
                   '/module one/pastpapers/operating system/OS JULY 2017.pdf';
               final file = await PDFApi.loadFirebase(url);
@@ -487,7 +488,7 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url =
                   '/module one/pastpapers/operating system/OS JULY 2018.pdf';
               final file = await PDFApi.loadFirebase(url);
@@ -497,7 +498,7 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url =
                   '/module one/pastpapers/operating system/OS JULY 2019.pdf';
               final file = await PDFApi.loadFirebase(url);
@@ -547,7 +548,7 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
             ),
             ListTile(
               onTap: () async {
-                showRewardedAd();
+                showInterstistialAd();
                 const url =
                     '/module one/pastpapers/communication skills/CS NOV 2017.pdf';
                 final file = await PDFApi.loadFirebase(url);
@@ -557,7 +558,7 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
             ),
             ListTile(
               onTap: () async {
-                showRewardedAd();
+                showInterstistialAd();
                 const url =
                     '/module one/pastpapers/communication skills/CS JULY 2018.pdf';
                 final file = await PDFApi.loadFirebase(url);
