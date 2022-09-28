@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ictnotes">
+    package="com.dict.n">
    <application
         android:label="ict notes and pastpapers"
         android:name="${applicationName}"

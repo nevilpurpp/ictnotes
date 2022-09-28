@@ -177,7 +177,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
         children: [
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url = '/module two/pastpapers/VB/';
               final file = await PDFApi.loadFirebase(url);
 
@@ -187,7 +187,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url =
                   '/module two/pastpapers/VB/visual programming2016nov.pdf';
               final file = await PDFApi.loadFirebase(url);
@@ -198,7 +198,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url =
                   '/module two/pastpapers/VB/visual programming2017july.pdf';
               final file = await PDFApi.loadFirebase(url);
@@ -218,7 +218,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url =
                   '/module two/pastpapers/VB/visual programming2018july.pdf';
               final file = await PDFApi.loadFirebase(url);
@@ -228,7 +228,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url =
                   '/module two/pastpapers/VB/visual programming2018nov.pdf';
               final file = await PDFApi.loadFirebase(url);
@@ -238,7 +238,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url =
                   '/module two/pastpapers/VB/visual programming2019july.pdf';
               final file = await PDFApi.loadFirebase(url);
@@ -258,7 +258,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
         children: [
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url =
                   '/module two/pastpaper/DBMS/databasemanagement 2016 july.pdf';
               final file = await PDFApi.loadFirebase(url);
@@ -268,7 +268,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url =
                   '/module two/pastpapers/DBMS/databasemanagement 2016 nov.pdf';
               final file = await PDFApi.loadFirebase(url);
@@ -278,7 +278,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url =
                   '/module two/pastpapers/DBMS/databasemanagement 2017 july.pdf';
               final file = await PDFApi.loadFirebase(url);
@@ -298,7 +298,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url =
                   '/module two/pastpapers/DBMS/databasemanagement nov 2018.pdf';
               final file = await PDFApi.loadFirebase(url);
@@ -308,7 +308,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url =
                   '/module two/pastpapers/DBMS/databasemanagement 2019 july.pdf';
               final file = await PDFApi.loadFirebase(url);
@@ -328,7 +328,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
         children: [
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url = '/module two/pastpaper/CA/2014nov-Copy.pdf';
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
@@ -337,7 +337,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url = '/module two/pastpaper/CA/2015nov-Copy.pdf';
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
@@ -346,7 +346,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url = '/module two/pastpaper/CA/CA PRAC 2016 JULY.pdf';
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
@@ -355,7 +355,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url = '/module two/pastpaper/CA/CA PRAC 2016.pdf';
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
@@ -364,7 +364,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url = '/module two/pastpapers/CA/CA PRAC 2017 JULY.pdf';
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
@@ -373,7 +373,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url = '/module two/pastpaper/CA/CA PRAC 2017.pdf';
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
@@ -392,7 +392,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
         children: [
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url = '/module two/pastpapers/SAD/SAD 2016july.pdf';
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
@@ -401,7 +401,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url = '/module two/pastpapers/SAD/SAD 2016nov.pdf';
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
@@ -410,7 +410,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url = '/module two/pastpapers/SAD/SAD 2017july.pdf';
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
@@ -419,7 +419,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url = '/module two/pastpapers/SAD/SAD 2017nov.pdf';
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
@@ -428,7 +428,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url = '/module two/pastpapers/SAD/SAD 2018j.pdf';
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
@@ -437,7 +437,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url = '/module two/pastpapers/SAD/SAD 2019july.pdf';
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
@@ -446,7 +446,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url = '/module two/pastpapers/SAD/SAD 2021 NOV.pdf';
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
@@ -465,7 +465,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
         children: [
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url =
                   '/module two/pastpapers/quantitative/QUANTITATIVE 2016.pdf';
               final file = await PDFApi.loadFirebase(url);
@@ -475,7 +475,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url =
                   '/module two/pastpapers/quantitative/QUANTITATIVE 2017 JULY.pdf';
               final file = await PDFApi.loadFirebase(url);
@@ -485,7 +485,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url =
                   '/module two/pastpapers/quantitative/QUANTITATIVE 2017 NOV.pdf';
               final file = await PDFApi.loadFirebase(url);
@@ -495,7 +495,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url =
                   '/module two/pastpapers/quantitative/QUANTITATIVE 2018 NOV.pdf';
               final file = await PDFApi.loadFirebase(url);
@@ -524,7 +524,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
             ),
             ListTile(
               onTap: () async {
-                showRewardedAd();
+                showInterstistialAd();
                 const url = '/module two/pastpapers/oop/OOP2014nov.pdf';
                 final file = await PDFApi.loadFirebase(url);
                 openPDF(context, file);
@@ -533,7 +533,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
             ),
             ListTile(
               onTap: () async {
-                showRewardedAd();
+                showInterstistialAd();
                 const url = '/module two/pastpapers/oop/OOP2016july.pdf';
                 final file = await PDFApi.loadFirebase(url);
                 openPDF(context, file);
@@ -542,7 +542,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
             ),
             ListTile(
               onTap: () async {
-                showRewardedAd();
+                showInterstistialAd();
                 const url = '/module two/pastpapers/oop/OOP2017july.pdf';
                 final file = await PDFApi.loadFirebase(url);
                 openPDF(context, file);
@@ -551,7 +551,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
             ),
             ListTile(
               onTap: () async {
-                showRewardedAd();
+                showInterstistialAd();
                 const url = '/module two/pastpapers/oop/OOP2017nov.pdf';
                 final file = await PDFApi.loadFirebase(url);
                 openPDF(context, file);
@@ -560,7 +560,7 @@ class _ListViewTwoState extends State<ListViewTwo> {
             ),
             ListTile(
               onTap: () async {
-                showRewardedAd();
+                showInterstistialAd();
                 const url = '/module two/pastpapers/oop/OOP2018nov.pdf';
                 final file = await PDFApi.loadFirebase(url);
                 openPDF(context, file);
@@ -569,12 +569,12 @@ class _ListViewTwoState extends State<ListViewTwo> {
             ),
             ListTile(
               onTap: () async {
-                showRewardedAd();
+                showInterstistialAd();
                 const url = '/module two/pastpapers/oop/OOP2019july.pdf';
                 final file = await PDFApi.loadFirebase(url);
                 openPDF(context, file);
               },
-              title: Text('OOP JULY 2019'),
+              title: const Text('OOP JULY 2019'),
             ),
           ])
     ]));

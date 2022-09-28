@@ -208,7 +208,7 @@ class _PDFViewerPageState extends State<PDFViewerPage> {
         title: Text(name),
         leading: IconButton(
           onPressed: () {
-            showRewardedAd();
+            showInterstistialAd();
             Navigator.pop(context);
           },
           icon: const Icon(Icons.arrow_back_ios_outlined),

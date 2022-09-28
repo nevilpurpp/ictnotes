@@ -182,6 +182,7 @@ class _ModuleOneState extends State<ModuleOne> {
           backgroundColor: Colors.indigo[800],
           leading: IconButton(
               onPressed: () {
+                showInterstistialAd();
                 Navigator.pop(context);
               },
               icon: const Icon(Icons.arrow_back_ios_outlined)),

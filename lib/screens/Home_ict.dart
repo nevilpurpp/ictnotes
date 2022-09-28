@@ -263,6 +263,7 @@ class _HomeIctState extends State<HomeIct> {
                     ),
                   ),
                   onTap: () {
+                    showInterstistialAd();
                     Navigator.push(
                         context,
                         MaterialPageRoute(

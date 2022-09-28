@@ -233,7 +233,7 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
             },
-            title: Text('SP 2017 JULY'),
+            title: const Text('SP 2017 JULY'),
           ),
           ListTile(
             onTap: () async {
@@ -243,7 +243,7 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
             },
-            title: Text('SP 2017 NOVEMBER'),
+            title: const Text('SP 2017 NOVEMBER'),
           ),
           ListTile(
             onTap: () async {
@@ -257,13 +257,13 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
+              showInterstistialAd();
               const url =
                   '/module one/pastpapers/structured programming/STRUCTURED PROGRAMMING NOV 2016.pdf';
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
             },
-            title: Text('SP 2016 NOVEMBER'),
+            title: const Text('SP 2016 NOVEMBER'),
           ),
           ListTile(
             onTap: () async {
@@ -283,7 +283,7 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
             },
-            title: Text('SP 2021 NOVEMBER'),
+            title: const Text('SP 2021 NOVEMBER'),
           ),
         ],
       ),
@@ -303,7 +303,7 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
             },
-            title: Text('CA JULY 2016 THEORY'),
+            title: const Text('CA JULY 2016 THEORY'),
           ),
           ListTile(
             onTap: () async {
@@ -313,7 +313,7 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
             },
-            title: Text('CA JULY 2017 PRACTICAL'),
+            title: const Text('CA JULY 2017 PRACTICAL'),
           ),
           ListTile(
             onTap: () async {
@@ -323,7 +323,7 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
             },
-            title: Text('CA NOVEMBER 2017 PRACTICAL'),
+            title: const Text('CA NOVEMBER 2017 PRACTICAL'),
           ),
           ListTile(
             onTap: () async {
@@ -343,7 +343,7 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
             },
-            title: Text('CA JULY 2019 THEORY'),
+            title: const Text('CA JULY 2019 THEORY'),
           ),
           ListTile(
             onTap: () async {
@@ -353,7 +353,7 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
             },
-            title: Text('CA JULY 2019 PRACTICAL'),
+            title: const Text('CA JULY 2019 PRACTICAL'),
           ),
           ListTile(
             onTap: () async {
@@ -363,7 +363,7 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
             },
-            title: Text('CA NOVEMBER 2021 THEORY'),
+            title: const Text('CA NOVEMBER 2021 THEORY'),
           ),
         ],
       ),
@@ -431,8 +431,8 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
           ),
           ListTile(
             onTap: () async {
-              showRewardedAd();
-              const url = '/module one/notes/Programming in C.pdf';
+              showInterstistialAd();
+              const url = '/module one/pastpapers/math/MATH JULY 2019.pdf';
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
             },
@@ -494,7 +494,7 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
             },
-            title: Text('OS JULY 2018'),
+            title: const Text('OS JULY 2018'),
           ),
           ListTile(
             onTap: () async {
@@ -504,7 +504,7 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
             },
-            title: Text('OS JULY 2019'),
+            title: const Text('OS JULY 2019'),
           ),
           ListTile(
             onTap: () async {
@@ -514,7 +514,7 @@ class _ListViewPastPapersState extends State<ListViewPastPapers> {
               final file = await PDFApi.loadFirebase(url);
               openPDF(context, file);
             },
-            title: Text('OS JULY 2020'),
+            title: const Text('OS JULY 2020'),
           ),
           ListTile(
             onTap: () async {
