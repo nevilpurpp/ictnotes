@@ -8,12 +8,20 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:861667636025:android:905914f35233af7aa86ee8",
+        "mobilesdk_app_id": "1:861667636025:android:63ae78f235855409a86ee8",
         "android_client_info": {
           "package_name": "com.dict.n"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "861667636025-p77m65mqcubd97135b12bhomnbi4mi8h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dict.n",
+            "certificate_hash": "12808910d936b21e5fdf2e08defb7d5515909154"
+          }
+        },
         {
           "client_id": "861667636025-q7ojspn2g7230k4hhbsnj79h2khbcj3p.apps.googleusercontent.com",
           "client_type": 3

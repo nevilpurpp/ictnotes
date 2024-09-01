@@ -14,12 +14,12 @@ if (flutterRoot == null) {
 
 def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
 if (flutterVersionCode == null) {
-    flutterVersionCode = '23'
+    flutterVersionCode = '40'
 }
 
 def flutterVersionName = localProperties.getProperty('flutter.versionName')
 if (flutterVersionName == null) {
-    flutterVersionName = '2.9'
+    flutterVersionName = '3.8'
 }
 
 apply plugin: 'com.android.application'
@@ -60,6 +60,7 @@ android {
         targetSdkVersion 33
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        multiDexEnabled true
     }
        signingConfigs {
        release {
@@ -86,7 +87,7 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.google.android.material:material:1.8.0-alpha01'
+    implementation 'com.google.android.material:material:1.10.0-alpha03'
     // Import the BoM for the Firebase platform
     implementation platform('com.google.firebase:firebase-bom:30.3.1')
 
@@ -94,6 +95,7 @@ dependencies {
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation 'com.google.firebase:firebase-perf'
     implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.applovin:applovin-sdk:'
 }
 
 

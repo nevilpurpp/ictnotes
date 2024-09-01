@@ -1,28 +1,39 @@
-import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:ictnotes/discussion/screens/discussion_home.dart';
+import 'package:ictnotes/screens/Home_ict.dart';
+import '../models/user_model.dart';
 import '../screens/login.dart';
+import 'auth_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthService {
+  UserModel userModel =
+      UserModel(email: '', uid: '', displayName: '', timestamp: DateTime.now());
+  final userRef = FirebaseFirestore.instance.collection('users');
   //handle AuthState()
-  handleAuthState() {
-    return StreamBuilder(
-        stream: FirebaseAuth.instance.authStateChanges(),
-        builder: (BuildContext context, snapshot) {
-          if (snapshot.hasData) {
-            return const DiscussionHome();
-          } else if (snapshot.hasError) {
-            return LoginPage();
-          } else {
-            return CircularProgressIndicator();
-          }
-        });
+
+//users
+  addUserToDB(
+      {required String uid,
+      required String displayName,
+      required String email,
+      required DateTime timestamp}) async {
+    userModel = UserModel(
+        uid: uid, displayName: displayName, email: email, timestamp: timestamp);
+    var data = userModel.toMap(UserModel(
+        email: email,
+        uid: uid,
+        displayName: displayName,
+        timestamp: timestamp));
+    await userRef.doc(uid).set(data.cast());
   }
+
+  //signInWithEmailAndPassword
 
   // signInWithGoogle()
 
-  signInWithGoogle() async {
+  /*Future<Map<String, dynamic>> signInWithGoogle() async {
     // Trigger the authentication  flow
     final GoogleSignInAccount? googleUser =
         await GoogleSignIn(scopes: <String>["email"]).signIn();
@@ -36,9 +47,30 @@ class AuthService {
       accessToken: googleAuth.accessToken,
       idToken: googleAuth.idToken,
     );
-    // Once signed in, return the UserCredential
-    return await FirebaseAuth.instance.signInWithCredential(credential);
-  }
+    //saving the user data to shared preferences
+
+    //sign in method
+    try {
+      UserCredential user =
+          await FirebaseAuth.instance.signInWithCredential(credential);
+      final QuerySnapshot result = await FirebaseFirestore.instance
+          .collection('users')
+          .where('id', isEqualTo: user.user!.uid)
+          .get();
+      Map<String, dynamic> userdata = {
+        'useremail': user.user!.email,
+        'displayName': user.user!.displayName,
+        'photoUrl': user.user!.photoURL,
+        'userid': user.user!.uid
+      };
+      return userdata;
+    } catch (error) {
+      if (kDebugMode) {
+        print(error);
+      }
+    }
+    throw credential;
+  }*/
 
   signOut() {
     FirebaseAuth.instance.signOut();

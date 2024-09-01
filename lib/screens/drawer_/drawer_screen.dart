@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class DrawerScreen extends StatefulWidget {
@@ -13,6 +12,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: const Color.fromARGB(246, 2, 21, 35),
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
             topRight: Radius.circular(20), bottomRight: Radius.circular(20)),
@@ -20,48 +20,23 @@ class _DrawerScreenState extends State<DrawerScreen> {
       child: ListView(
         padding: const EdgeInsets.all(0),
         children: [
-          DrawerHeader(
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(20),
-                  bottomRight: Radius.circular(20)),
-              gradient: LinearGradient(
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
-                  colors: [Colors.indigo, Colors.cyan]),
-            ), //BoxDecoration
-            child: Padding(
-              padding: const EdgeInsets.all(0.0),
-              child: UserAccountsDrawerHeader(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  gradient: const LinearGradient(
-                      begin: Alignment.topRight,
-                      end: Alignment.bottomLeft,
-                      colors: [Colors.cyan, Colors.indigoAccent]),
-                ), //BoxDecoration
-                accountName: Text(
-                  "NIVR Inc.",
-                  style: GoogleFonts.mochiyPopOne(
-                      color: Colors.white, fontSize: 16),
-                ),
-                accountEmail: Text("nevilpurpp12@gmail.com",
-                    style: GoogleFonts.mochiyPopOne(
-                        color: Colors.white, fontSize: 14)),
-                currentAccountPictureSize: const Size.square(50),
-                currentAccountPicture: CircleAvatar(
-                    child: Image.asset(
-                  'assets/nivr trans.png',
-                  fit: BoxFit.fill,
-                )), //circleAvatar
-              ),
-            ), //UserAccountDrawerHeader
-          ), //DrawerHeader
-
+          Center(
+            child: Icon(Icons.import_contacts_outlined,
+                size: 100, color: Colors.indigo.shade200),
+          ),
+          const Center(
+            child: Text(
+              'ICT NOTES AND\n PAST-PAPERS',
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30,
+                  color: Colors.indigo),
+            ),
+          ),
           AboutListTile(
             icon: const Icon(
               Icons.info,
-              color: Colors.cyan,
+              color: Colors.indigo,
               size: 40,
             ),
             applicationIcon: Icon(
@@ -69,44 +44,42 @@ class _DrawerScreenState extends State<DrawerScreen> {
               color: Colors.pink[800],
             ),
             applicationName: 'ICT NOTES AND PAST-PAPERS',
-            applicationVersion: '2.9',
-            applicationLegalese: '© Copyright NIVR Inc 2022 Company',
+            applicationVersion: '3.3',
+            applicationLegalese: '© Copyright FlutterWars Inc 2022 Company',
             child: Text(
               'About App',
-              style: GoogleFonts.mochiyPopOne(
-                  color: Colors.cyan.shade900, fontSize: 15),
+              style: TextStyle(
+                color: Colors.indigo.shade200,
+              ),
             ),
           ),
           const Divider(),
-
           ListTile(
-            hoverColor: Colors.deepPurpleAccent,
             leading: const Icon(
               Icons.more_outlined,
-              color: Colors.cyan,
+              color: Colors.indigo,
               size: 40,
             ),
-            title: Text(
-              'More Apps',
-              style: GoogleFonts.mochiyPopOne(
-                  color: Colors.cyan.shade900, fontSize: 15),
-            ),
+            title: Text('More Apps',
+                style: TextStyle(
+                  color: Colors.indigo.shade200,
+                )),
             onTap: () {
               moreApps();
             },
           ),
           const Divider(),
           ListTile(
-            hoverColor: Colors.deepPurpleAccent,
             leading: const Icon(
               Icons.facebook_outlined,
-              color: Colors.cyan,
+              color: Colors.blue,
               size: 40,
             ),
             title: Text(
               'LIKE US ON FACEBOOK',
-              style: GoogleFonts.mochiyPopOne(
-                  color: Colors.cyan.shade900, fontSize: 12),
+              style: TextStyle(
+                color: Colors.indigo.shade200,
+              ),
             ),
             onTap: () {
               facebook();
@@ -131,16 +104,16 @@ class _DrawerScreenState extends State<DrawerScreen> {
           ),*/
           const Divider(),
           ListTile(
-            hoverColor: Colors.deepPurpleAccent,
             leading: const Icon(
               Icons.close_outlined,
-              color: Colors.cyan,
+              color: Colors.indigo,
               size: 40,
             ),
             title: Text(
               'exit',
-              style: GoogleFonts.mochiyPopOne(
-                  color: Colors.cyan.shade900, fontSize: 15),
+              style: TextStyle(
+                color: Colors.indigo.shade200,
+              ),
             ),
             onTap: () {
               Navigator.pop(context);
@@ -152,11 +125,10 @@ class _DrawerScreenState extends State<DrawerScreen> {
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text(
-              '© Copyright NIVR Inc 2022 Company',
-              style: GoogleFonts.mochiyPopOne(
-                  color: Colors.cyan.shade900, fontSize: 12),
-            ),
+            child: Text('© Copyright FlutterWars, Inc 2022 Company',
+                style: TextStyle(
+                  color: Colors.indigo.shade200,
+                )),
           ),
         ],
       ),
